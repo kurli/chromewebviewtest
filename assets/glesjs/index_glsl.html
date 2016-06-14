@@ -5,6 +5,7 @@
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <script type="text/javascript" src="game.js"></script>
+<script type="text/javascript" src="Stats.js"></script>
 <style>
 
 /*http://stackoverflow.com/questions/17506469/how-to-make-html5-canvas-full-page-size-with-cocos2d*/
@@ -15,6 +16,9 @@ canvas { display:block; /*cursor:none;*/ } /* To remove the scrollbars */
 </style>
 
 </head>
+<script type="text/javascript">
+	window.stats = new Stats();
+</script>
 
 <body onload="_GLStart();">
 <canvas id="game-canvas" style="border: none; width: 100px; height: 100px;"></canvas>

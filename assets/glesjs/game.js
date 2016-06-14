@@ -208,10 +208,8 @@ function _GLStart() {
 
 }
 
-
 function DrawFrame() {
 	window.requestAnimationFrame(DrawFrame);
-
 	gl.clearColor(0.4,0.4,0.5,1);
 	gl.clear(gl.COLOR_BUFFER_BIT);
 	timer ++;
@@ -310,6 +308,7 @@ function DrawFrame() {
 	}
 	prevmouseout = mouseout;
 	gl.finish();
+	window.stats.update();
 }
 
 

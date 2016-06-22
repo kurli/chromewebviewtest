@@ -9,7 +9,7 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 	private WebView mWebView;
-	private static final String mHomeUrl =  "file:///android_asset/glesjs/index_glsl.html";
+	private static final String mHomeUrl =  "file:///android_asset/glesjs/index.html";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,15 @@ public class MainActivity extends Activity {
         WebView.setWebContentsDebuggingEnabled(true);
         webSettings.setAllowFileAccessFromFileURLs(true);
         webSettings.setAllowUniversalAccessFromFileURLs(true);
+        webSettings.setDomStorageEnabled(true);
 
         mWebView.setWebViewClient(new WebViewClient());
         mWebView.loadUrl(mHomeUrl);
+        mWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView wv, String url) {
+                return false;
+            }
+        });
     }
 }
